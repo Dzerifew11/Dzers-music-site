@@ -1,0 +1,27 @@
+
+.footer a {
+    color: #0088cc;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #00e5ff;
+}
+button.playBtn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #4cafef;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button.playBtn:hover {
+    background: #2196f3;
+}

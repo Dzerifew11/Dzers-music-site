@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Music</title>
+<link rel="stylesheet" href="input.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #1e1e2f;
+    padding: 15px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+button.playBtn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #4cafef;
+    color: white;
+    font-size: 16px;
+}
+
+button.playBtn:hover {
+    background: #2196f3;
+}
+
+.title {
+    margin-top: 10px;
+    font-size: 18px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎧 My Favorite Songs</h1>
+
+<div class="container">
+
+<div class="card">
+    <img src="https://i.imgur.com/8Km9tLL.jpg">
+    <div class="title">Sprinter</div>
+    <audio src="sprinter.mp3"></audio>
+    <button class="playBtn">▶ Play</button>
+</div>
+
+<div class="card">
+    <img src="https://i.imgur.com/5tj6S7Ol.jpg">
+    <div class="title">Struct</div>
+    <audio src="struct.mp3"></audio>
+    <button class="playBtn">▶ Play</button>
+</div>
+
+<div class="card">
+    <img src="https://i.imgur.com/3fJ1P48.jpg">
+    <div class="title">Love me</div>
+    <audio src="Love-me.mp3"></audio>
+    <button class="playBtn">▶ Play</button>
+</div>
+
+<div class="card">
+    <img src="https://i.imgur.com/6v7Q8zB.jpg">
+    <div class="title">Where you are</div>
+    <audio src="whereyouare.mp3"></audio>
+    <button class="playBtn">▶ Play</button>
+</div>
+<div class="card">
+    <img src="https://i.imgur.com/6v7Q8zB.jpg">
+    <div class="title">The stranglers</div>
+    <audio src="golden-brown.mp3"></audio>
+    <button class="playBtn">▶ Play</button>
+</div>
+
+<div class="card">
+    <img src="https://i.imgur.com/6v7Q8zB.jpg">
+    <div class="title">ravyn - love me not</div>
+    <audio src="lovemenot.mp3"></audio>
+    <button class="playBtn">▶ Play</button>
+</div>
+<div class="card">
+    <img src="https://i.imgur.com/6v7Q8zB.jpg">
+    <div class="title">Drake. - God's plan</div>
+    <audio src="Godsplan.mp3"></audio>
+    <button class="playBtn">▶ Play</button>
+</div>
+
+</div>
+
+<!-- JS ENDDA BO‘LISHI SHART -->
+<script>
+    
+const buttons = document.querySelectorAll(".playBtn");
+const audios = document.querySelectorAll("audio");
+
+buttons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        const audio = audios[index];
+
+        // boshqa hammasini to‘xtat
+        audios.forEach((a, i) => {
+            if (i !== index) {
+                a.pause();
+                a.currentTime = 0;
+                buttons[i].textContent = "▶ Play";
+            }
+        });
+
+        // play / pause
+        if (audio.paused) {
+            audio.play();
+            btn.textContent = "⏸ Pause";
+        } else {
+            audio.pause();
+            btn.textContent = "▶ Play";
+        }
+    });
+});
+</script>
+<footer>
+<p>© 2024 My Music. All rights reserved. | Created by dzerifew</p>
+<a href="https://t.me/dzerifew" target="_blank" class="tg-btn">
+    📩 Telegram
+</a>
+
+<style>
+    footer {
+    margin-top: 50px;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    font-size: 14px;
+    color: #ccc;
+}
+.tg-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #0088cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.tg-btn:hover {
+    background-color: #006699;
+}
+</style>
+</footer>
+
+</body>
+</html>
